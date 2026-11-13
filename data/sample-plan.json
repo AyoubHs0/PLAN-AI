@@ -1,0 +1,62 @@
+
+{
+  "tasks": [
+    {
+      "id": "TASK-001",
+      "title": "Create project structure",
+      "description": "Prepare the project folders and files.",
+      "userStories": [
+        "As a developer, I want an organized project structure."
+      ],
+      "acceptanceCriteria": [
+        "All required folders are created.",
+        "JavaScript modules are organized."
+      ],
+      "priority": "High",
+      "importance": "High",
+      "size": "M",
+      "estimatedTime": 4,
+      "deadline": "Day 1",
+      "status": "Done",
+      "dependencies": []
+    },
+    {
+      "id": "TASK-002",
+      "title": "Build dashboard",
+      "description": "Create the dashboard interface.",
+      "userStories": [
+        "As a user, I want to see my projects."
+      ],
+      "acceptanceCriteria": [
+        "Projects are displayed as cards.",
+        "Progress is visible."
+      ],
+      "priority": "Medium",
+      "importance": "High",
+      "size": "L",
+      "estimatedTime": 6,
+      "deadline": "Day 2",
+      "status": "To Do",
+      "dependencies": ["TASK-001"]
+    },
+    {
+      "id": "TASK-003",
+      "title": "Create project form",
+      "description": "Build and validate the project creation form.",
+      "userStories": [
+        "As a user, I want to create a project."
+      ],
+      "acceptanceCriteria": [
+        "Required fields are validated.",
+        "Invalid data cannot be submitted."
+      ],
+      "priority": "High",
+      "importance": "High",
+      "size": "M",
+      "estimatedTime": 5,
+      "deadline": "Day 3",
+      "status": "To Do",
+      "dependencies": ["TASK-001"]
+    }
+  ]
+}

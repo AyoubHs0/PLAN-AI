@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/parsleyjs@2.9.2/dist/parsley.min.js"></script>
 
 </head>
 
@@ -19,9 +23,10 @@
             <li>
                 <a href="index.html" class="text-amber-500 border-b-2 border-amber-500">DASHBOARD</a>
             </li>
-            <li><a href="form.html" class="hover:text-amber-500">NOUVEAU PROJET</a></li>
+            <li><a href="new-project.html" class="hover:text-amber-500">NOUVEAU PROJET</a></li>
         </ul>
-        <button class="hover:text-amber-500 font-bold text-lg">PARAMÈTRES IA<span class="text-amber-500"></span></button>
+        <button id="para" class="font-bold text-lg bg-amber-600 p-3 rounded-lg h-10 flex items-center">PARAMÈTRES
+            IA</button>
     </header>
     <main class="flex flex-col items-center justify-center p-4">
         <h1 class="text-4xl font-bold mb-4">Bienvenue sur PLAN-AI</h1>
@@ -172,7 +177,7 @@
                     </g>
                 </svg>
                 <p>aucun projet disponible</p>
-                <a href="form.html"><button class="bg-amber-500 text-white px-4 py-2 rounded hover:bg-amber-600">Créer
+                <a href="new-project.html"><button class="bg-amber-500 text-white px-4 py-2 rounded hover:bg-amber-600">Créer
                         un projet</button></a>
             </div>
 
@@ -185,12 +190,27 @@
             <li>
                 <a href="index.html" class="text-amber-500 border-b-2 border-amber-500">DACHBOARD</a>
             </li>
-            <li><a href="form.html" class="hover:text-amber-500">NOUVEAU PROJET</a></li>
+            <li><a href="new-project.html" class="hover:text-amber-500">NOUVEAU PROJET</a></li>
         </ul>
         <article class="font-bold text-lg">
             PLAN-<span class="text-amber-500">AI</span>
         </article>
     </footer>
+    <section id="modal" class="hidden p-15 flex justify-center">
+        <article class="flex flex-col bg-white w-80 h-80 gap-4 items-center rounded-lg p-4">
+                <button id="frmer-modal" class="bg-red-500 p-1 h-6 flex justify-center items-center  rounded-2xl">&times;</button>
+                <h2>PARAMÈTRES IA</h2>
+            <form data-parsley-validate class="flex flex-col gap-2">
+                <label for="api">Clé API</label>
+                <input type="password" placeholder="API-key" required class="border-black border-2 p-3 h-10 rounded-lg ">
+
+                <button type="submit" class="bg-blue-500 rounded-lg p-3">Enregistrer la clé</button>
+            </form>
+            <button id="button" class="bg-gray-200 rounded-lg p-3">Mode demo</button>
+
+        </article>
+    </section>
+    <script type="module" src="js/main.js"></script>
 </body>
 
 </html>
