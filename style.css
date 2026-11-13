@@ -1,0 +1,13 @@
+.parsley-errors-list{
+    color : red;
+    font-size: 12px;
+    margin-top: 4px;
+    list-style: none;
+    font-weight: normal;
+}
+.parsley-error {
+    border-color: red;
+}
+.parsley-success{
+    border-color: green;
+}

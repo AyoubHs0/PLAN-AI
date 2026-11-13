@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/parsleyjs@2.9.2/dist/parsley.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/parsleyjs@2.9.2/dist/i18n/fr.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100 font-sans font-bold">
+    <header
+        class="flex text-white bg-black w-auto p-6 border-b-4 border-amber-500 h-10 rounded-b-lg items-center justify-between px-4 ">
+        <article class="font-bold text-lg">
+            PLAN-<span class="text-amber-500">AI</span>
+        </article>
+        <ul class="flex justify-between gap-4 font-bold text-lg">
+            <li>
+                <a href="index.html" class="hover:text-amber-500 ">DASHBOARD</a>
+            </li>
+            <li><a href="#" class="text-amber-500 border-b-2 border-amber-500">NOUVEAU PROJET</a></li>
+        </ul>
+        <button class="hover:text-amber-500 font-bold text-lg">PARAMÈTRES IA<span class="text-amber-500"></span></button>
+    </header>
+    <main class="p-15 leading-8">
+        <h1 class="font-bold text-2xl">Créer un nouveau projet</h1>
+        <p class="font-sans text-gray-700">Remplissez les informations pour générer votre plan de développement.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <section class="md:col-span-2 bg-white rounded-lg p-6 ml-15">
+                <form data-parsley-validate class="flex flex-col gap-4">
+                    <div class=" grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex flex-col gap-2">
+                            <label for="nom">Nom de projet</label>
+                            <input type="text" data-parsley-required="true" id="nom" data-parsley-minlength="3"
+                                class="border-2 border-black rounded-lg h-10 p-3"  placeholder="ex : plan ai ">
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="discription">Description</label>
+                            <textarea id="discription" required class="border-2 border-black rounded-lg p-3"
+                                data-parsley-minlength="5"  placeholder="une site web de ...."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex flex-col gap-2">
+                            <label for="date">Durée (en jours)</label>
+                            <input type="number" id="date" required min="1"
+                                class="border-2 border-black rounded-lg h-10 p-3"  placeholder="7">
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="ND">Nombre de développeurs</label>
+                            <input type="number" id="ND" required min="1" class="border-2 border-black rounded-lg h-10 p-3"  placeholder="1">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex flex-col gap-2 ">
+                            <label for="tech">Technologies</label>
+                            <input type="text" id="tech"  placeholder="Node.js,tailwind,css..."
+                                class="border-2 border-black rounded-lg h-10 p-3" required>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="Niveau">Niveau de difficulté</label>
+                            <select id="Niveau" class="border-2 border-black rounded-lg h-10" required>
+                                <option value="">Choisir un niveau</option>
+                                <option value="Beginner">Beginner</option>
+                                <option value="Intermediate">Intermediate</option>
+                                <option value="Advanced">Advanced</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="brief">Brief complet</label>
+                        <textarea name="brief" id="brief" required data-parsley-minlength="10" class="border-2 border-black rounded-lg p-3"
+                             placeholder="Décrivez votre projet en détail ..."></textarea>
+                    </div>
+                    <div class="flex flex-row w-full justify-center">
+                        <button type="submit"
+                            class="w-100 border-2 p-3 border-black bg-blue-500 rounded-lg justify-center">Generer le
+                            plan de
+                            developpement
+                        </button>
+                    </div>
+                </form>
+            </section>
+            <section class="bg-white rounded-lg p-6 flex justify-center">
+                <p>État de la génération</p>
+            </section>
+        </div>
+    </main>
+    <footer class="bg-black text-white p-4 mt-4 border-t-4 border-amber-500 rounded-t-lg flex justify-between items-center">
+        <p>&copy; 2026 PLAN-AI. Tous droits réservés.</p>
+        <ul class="flex justify-between gap-4 font-bold text-lg">
+            <li>
+                <a href="index.html" class="hover:text-amber-500">DASHBOARD</a>
+            </li>
+            <li><a href="form.html" class="text-amber-500 border-b-2 border-amber-500">NOUVEAU PROJET</a></li>
+        </ul>
+        <article class="font-bold text-lg">
+            PLAN-<span class="text-amber-500">AI</span>
+        </article>
+    </footer>
+    <script>
+    Parsley.setLocale('fr');
+</script>
+</body>
+
+</html>
